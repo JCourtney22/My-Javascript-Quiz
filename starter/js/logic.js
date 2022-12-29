@@ -14,7 +14,7 @@ var questions = [
         question: "What do you have to be careful of in the library?",
         options: ["Musty pages", "The shadows", "The Librarian", "Making too much noise"],
         answer: "The shadows"
-    }
+    },
     {
         question: "Which detective is Jenny married to?",
         options: ["Sherlock", "Nancy", "Vastra", "Dirk"],

@@ -92,12 +92,18 @@ function checkAnswer(event){
     } else {
         message.textContent = "Wrong! You have lost 5 seconds.";
         messageEl.appendChild(message);
+        amendTime(-5)
         console.log("wrong");
         choicesEl.innerHTML = "";
         quiz(qIndex);
     }
 }
 
+//Function for amending timer based on current timer
+
+function amendTime(amount) {
+    timerCount += amount;
+}
 
 // startScreen.addEventListener("click", startTimer);
 

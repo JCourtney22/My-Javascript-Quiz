@@ -14,16 +14,22 @@ var questions = [
 
 var timerEl = document.querySelector("#time");
 var startBtn = document.querySelector("#start");
-// var startScreen = document.querySelector("#start-screen");
 
+
+// var startScreen = document.querySelector("#start-screen");
+var questionsEl = document.getElementById("questions");
 var timer;
 var timerCount;
+var qIndex = 0;
+
 
 //Start the game function
 function startGame(){
     timerCount = 60;
-    document.getElementsByClassName("start-screen").style.display = "none";
-    startTimer()
+    document.getElementById("start-screen").style.display = "none";
+    questionsEl.removeAttribute("class");
+    startTimer();
+    quiz(qIndex);
 }
 
 //Start timer function
@@ -32,25 +38,63 @@ function startTimer (){
         timerCount--;
         timerEl.textContent = timerCount;
         if (timerCount === 0){
-        clearInterval(timer);
+            endGame();
         }
     }, 1000);
+}
+
+function endGame() {
+    clearInterval(timer);
+    timerEl.textContent = timerCount;
 }
 
 //Event listeners
 startBtn.addEventListener("click", startGame);
 
-//Function for questions
+//Question Variables
 
-function selectQuestions(){
-    
+var questionContainer = document.querySelector("#question-title");
+var choicesEl = document.getElementById("choices");
+var correctAnswer = "";
+
+function quiz(qIndex) {
+ var currentQuestion = questions[qIndex];
+correctAnswer = questions[qIndex].answer;
+console.log(correctAnswer);
+ console.log(currentQuestion);
+ questionContainer.textContent = currentQuestion.question;
+ for (let i = 0; i < currentQuestion.options.length; i++) {
+    const option = currentQuestion.options[i];
+    var optionbtn = document.createElement("button");
+    optionbtn.setAttribute("class", "option");
+    optionbtn.setAttribute("value", option);
+    optionbtn.textContent= i + 1 + '. ' + option;
+    optionbtn.onclick = checkAnswer;
+    choicesEl.appendChild(optionbtn);
+ }
 }
 
-// question.textContent = currentQuestion.question;
-//  A.textContent = currentQuestion.A;
-//  B.textContent = currentQuestion.B;
-//  C.textContent = currentQuestion.C;
-//  D.textContent = currentQuestion.D;
+//Check answer function
+
+var messageEl = document.getElementById("message");
+
+function checkAnswer(event){
+    qIndex++;
+    var userAnswer = event.target.value;
+    console.log(userAnswer);
+    if (userAnswer === correctAnswer) {
+        console.log("right");
+        choicesEl.innerHTML="";
+        quiz(qIndex);
+    } else {
+        var message = document.createElement("p");
+        message.textContent = "Wrong! You have lost 5 seconds.";
+        messageEl.appendChild(message)
+        console.log("wrong");
+        choicesEl.innerHTML = "";
+        quiz(qIndex);
+    }
+}
 
 
 // startScreen.addEventListener("click", startTimer);

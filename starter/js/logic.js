@@ -77,19 +77,21 @@ console.log(correctAnswer);
 //Check answer function
 
 var messageEl = document.getElementById("message");
+var message = document.createElement("p");
 
 function checkAnswer(event){
     qIndex++;
     var userAnswer = event.target.value;
     console.log(userAnswer);
     if (userAnswer === correctAnswer) {
+        message.textContent = "Correct!";
+        messageEl.appendChild(message);
         console.log("right");
         choicesEl.innerHTML="";
         quiz(qIndex);
     } else {
-        var message = document.createElement("p");
         message.textContent = "Wrong! You have lost 5 seconds.";
-        messageEl.appendChild(message)
+        messageEl.appendChild(message);
         console.log("wrong");
         choicesEl.innerHTML = "";
         quiz(qIndex);

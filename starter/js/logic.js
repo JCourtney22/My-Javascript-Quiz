@@ -9,6 +9,46 @@ var questions = [
         question: "Will you get the answer correct?",
         options: ["Definitely", "Beyond a doubt", "Sure thing", "Affirmative"],
         answer: "Affirmative"
+    },
+    {
+        question: "What do you have to be careful of in the library?",
+        options: ["Musty pages", "The shadows", "The Librarian", "Making too much noise"],
+        answer: "The shadows"
+    }
+    {
+        question: "Which detective is Jenny married to?",
+        options: ["Sherlock", "Nancy", "Vastra", "Dirk"],
+        answer: "Vastra"
+    },
+    {
+        question: "What food did number ten ask for?",
+        options: ["Banana", "Apple", "Toast", "Fish Fingers"],
+        answer: "Apple"
+    },
+    {
+        question: "Which animal resemble the police-for-hire?",
+        options: ["Elephant", "Lion", "Rhino", "Gorilla"],
+        answer: "Rhino"
+    },
+    {
+        question: "Which British landmark was a prison?",
+        options: ["Stonehenge", "Big Ben", "The Kelpies", "Cardiff Castle"],
+        answer: "Stonehenge"
+    },
+    {
+        question: "Which gameshow is deadly if you get the answer wrong?",
+        options: ["Who Wants to be a Millionaire", "Pointless", "The Chase", "The Weakest Link"],
+        answer: "The Weakest Link"
+    },
+    {
+        question: "Which robot will upgrade you?",
+        options: ["Sentinels", "Cybermen", "Hal 9000", "David 8"],
+        answer: "Cybermen"
+    },
+    {
+        question: "Which TV series do all the questions reference?",
+        options: ["Doctor Who", "Battlestar Galactica", "Star Trek", "Red Dwarf"],
+        answer: "Doctor Who"
     }
 ]
 

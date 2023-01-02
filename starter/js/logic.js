@@ -83,9 +83,15 @@ function startTimer (){
     }, 1000);
 }
 
+//End Game function
+
+var endPage = document.getElementById("end-screen");
+
 function endGame() {
     clearInterval(timer);
     timerEl.textContent = timerCount;
+    questionsEl.style.display = "none";
+    endPage.removeAttribute("class");
 }
 
 //Event listeners
@@ -98,20 +104,20 @@ var choicesEl = document.getElementById("choices");
 var correctAnswer = "";
 
 function quiz(qIndex) {
- var currentQuestion = questions[qIndex];
-correctAnswer = questions[qIndex].answer;
-console.log(correctAnswer);
- console.log(currentQuestion);
- questionContainer.textContent = currentQuestion.question;
- for (let i = 0; i < currentQuestion.options.length; i++) {
-    const option = currentQuestion.options[i];
-    var optionbtn = document.createElement("button");
-    optionbtn.setAttribute("class", "option");
-    optionbtn.setAttribute("value", option);
-    optionbtn.textContent= i + 1 + '. ' + option;
-    optionbtn.onclick = checkAnswer;
-    choicesEl.appendChild(optionbtn);
- }
+    var currentQuestion = questions[qIndex];
+    correctAnswer = questions[qIndex].answer;
+    console.log(correctAnswer);
+    console.log(currentQuestion);
+    questionContainer.textContent = currentQuestion.question;
+    for (let i = 0; i < currentQuestion.options.length; i++) {
+        const option = currentQuestion.options[i];
+        var optionbtn = document.createElement("button");
+        optionbtn.setAttribute("class", "option");
+        optionbtn.setAttribute("value", option);
+        optionbtn.textContent = i + 1 + '. ' + option;
+        optionbtn.onclick = checkAnswer;
+        choicesEl.appendChild(optionbtn);
+    }
 }
 
 //Check answer function
@@ -127,15 +133,23 @@ function checkAnswer(event){
         message.textContent = "Correct!";
         messageEl.appendChild(message);
         console.log("right");
-        choicesEl.innerHTML="";
-        quiz(qIndex);
+        if (qIndex >= questions.length) {
+            endGame();
+        } else {
+            choicesEl.innerHTML = "";
+            quiz(qIndex);
+        };
     } else {
         message.textContent = "Wrong! You have lost 5 seconds.";
         messageEl.appendChild(message);
         amendTime(-5)
         console.log("wrong");
-        choicesEl.innerHTML = "";
-        quiz(qIndex);
+        if (qIndex >= questions.length) {
+            endGame();
+        } else {
+            choicesEl.innerHTML = "";
+            quiz(qIndex);
+        };
     }
 }
 
@@ -144,6 +158,10 @@ function checkAnswer(event){
 function amendTime(amount) {
     timerCount += amount;
 }
+
+//Highscore display and storage
+
+
 
 // startScreen.addEventListener("click", startTimer);
 

@@ -86,12 +86,14 @@ function startTimer (){
 //End Game function
 
 var endPage = document.getElementById("end-screen");
+var endScore = document.getElementById("final-score");
 
 function endGame() {
     clearInterval(timer);
     timerEl.textContent = timerCount;
     questionsEl.style.display = "none";
     endPage.removeAttribute("class");
+    endScore.textContent = userScore;
 }
 
 //Event listeners
@@ -124,6 +126,7 @@ function quiz(qIndex) {
 
 var messageEl = document.getElementById("message");
 var message = document.createElement("p");
+var userScore = 0
 
 function checkAnswer(event){
     qIndex++;
@@ -133,6 +136,7 @@ function checkAnswer(event){
         message.textContent = "Correct!";
         messageEl.appendChild(message);
         console.log("right");
+        userScore++;
         if (qIndex >= questions.length) {
             endGame();
         } else {

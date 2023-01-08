@@ -22,9 +22,14 @@ I've learnt that breaking things down can be helpful and that seeking help is fa
 
 I have found that I have learnt a lot more about Javascript by taking my time and utilising my tutors where possible. I am proud of what I have accomplished and hope to add to the CSS in the future to style the Quiz in a more interesting manner. I have also kept the sound effects in so that I may utilise them in future to extend my understanding and use of Javascript.
 
-## Screenshot
+## Screenshots
 
-Please see below the screen shot of deployed site.
+Please see below the screenshots of deployed site (https://jcourtney22.github.io/Super-Sci-Fi-Quiz/).
+
+![image](https://user-images.githubusercontent.com/115502589/211221690-7163093f-4387-42e5-839f-9137dcadaf65.png)
+![image](https://user-images.githubusercontent.com/115502589/211221701-62eed2db-14a7-474a-ae58-ecd445ef02b0.png)
+![image](https://user-images.githubusercontent.com/115502589/211221712-c9bc7f03-1c5b-4fcb-a874-1b9350f890b6.png)
+
 
 ## License
 Please refer to the license in the repo.

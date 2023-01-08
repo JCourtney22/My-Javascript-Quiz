@@ -177,7 +177,7 @@ function highScore() {
     };
     Initials.push(userData);
     localStorage.setItem("Initials", JSON.stringify(Initials));
-    // window.location.href = "../starter/highscores.html";
+    window.location.href = "./highscores.html";
 }
 
 

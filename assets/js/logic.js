@@ -1,3 +1,4 @@
+//Array of questions
 var questions = [
     {
         question: "Which is larger?",
@@ -54,14 +55,20 @@ var questions = [
 
 var timerEl = document.querySelector("#time");
 var startBtn = document.querySelector("#start");
-
-
-// var startScreen = document.querySelector("#start-screen");
 var questionsEl = document.getElementById("questions");
 var timer;
 var timerCount;
 var qIndex = 0;
-
+var endPage = document.getElementById("end-screen");
+var endScore = document.getElementById("final-score");
+var questionContainer = document.querySelector("#question-title");
+var choicesEl = document.getElementById("choices");
+var correctAnswer = "";
+var messageEl = document.getElementById("message");
+var message = document.createElement("p");
+var userScore = 0
+var initialsEl = document.getElementById("initials");
+var submitBtn = document.getElementById("submit");
 
 //Start the game function
 function startGame(){
@@ -85,9 +92,6 @@ function startTimer (){
 
 //End Game function
 
-var endPage = document.getElementById("end-screen");
-var endScore = document.getElementById("final-score");
-
 function endGame() {
     clearInterval(timer);
     timerEl.textContent = timerCount;
@@ -96,15 +100,10 @@ function endGame() {
     endScore.textContent = userScore;
 }
 
-//Event listeners
+//Event listener for start button
 startBtn.addEventListener("click", startGame);
 
-//Question Variables
-
-var questionContainer = document.querySelector("#question-title");
-var choicesEl = document.getElementById("choices");
-var correctAnswer = "";
-
+//Function for displaying the quiz questions
 function quiz(qIndex) {
     var currentQuestion = questions[qIndex];
     correctAnswer = questions[qIndex].answer;
@@ -123,11 +122,6 @@ function quiz(qIndex) {
 }
 
 //Check answer function
-
-var messageEl = document.getElementById("message");
-var message = document.createElement("p");
-var userScore = 0
-
 function checkAnswer(event){
     qIndex++;
     var userAnswer = event.target.value;
@@ -158,17 +152,11 @@ function checkAnswer(event){
 }
 
 //Function for amending timer based on current timer
-
 function amendTime(amount) {
     timerCount += amount;
 }
 
-//Highscore display and storage
-
-var initialsEl = document.getElementById("initials");
 //Create a user object from their submission and their score
-
-
 function highScore() {
     let Initials = JSON.parse(localStorage.getItem("Initials")) || [];
     var userData = {
@@ -180,16 +168,8 @@ function highScore() {
     window.location.href = "./highscores.html";
 }
 
-
-
 //Event Listener for submit button
-
-var submitBtn = document.getElementById("submit");
-
 submitBtn.addEventListener("click", function () {
     highScore();
     })
-
-
-// startScreen.addEventListener("click", startTimer);
 

@@ -72,7 +72,7 @@ var submitBtn = document.getElementById("submit");
 
 //Start the game function
 function startGame(){
-    timerCount = 100;
+    timerCount = 90;
     document.getElementById("start-screen").style.display = "none";
     questionsEl.removeAttribute("class");
     startTimer();

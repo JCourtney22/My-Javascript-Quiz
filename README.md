@@ -13,10 +13,13 @@ I found that I needed to create an endGame function that depicts what happens wh
 
 This psuedocode helped me organise my thoughts, break my main goal into steps and implement them.
 
+My next struggle was understanding how to store data in the local storage and then display it in the screen. I booked a tutor session to support me with this but spend the time before the session to try and brush up on my knowledge and udnerstanding so that I was better prepared. I managed to store the data in the local storage and recognised that I needed to use JSON.parse and JSON.stringify. This led me to knowing that I needed to store the user's initials and their score into an array, creating an object. This meant that the tutor only needed to guide me in where to to put my JSON.parse and JSON stringify as well as guiding me to sort the scores in descending height. My prior efforts in researching and gathering knowledge helped me best utilise the tutor as I had more questions and understanding around what I needed to accomplish.
 
 ##Things I learned
 
 I've learnt that breaking things down can be helpful and that seeking help is far better than struggling through. I've found that taking time on the assignment rather than pushing it through and rushing it has helped me learn more as opposed to skipping over the hard parts. I have perservered and found that far more beneficial to my learning and understanding.
+
+I have found that I have learnt a lot more about Javascript by taking my time and utilising my tutors where possible. I am proud of wat I have accomplished and hope to add to the CSS in the future to style the Quiz in a more interesting manner.
 
 ##Screenshot
 

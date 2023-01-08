@@ -166,13 +166,21 @@ function amendTime(amount) {
 //Highscore display and storage
 
 var initialsEl = document.getElementById("initials");
+//Create a user object from their submission and their score
+
 
 function highScore() {
-    localStorage.getItem("Initials");
-    localStorage.setItem("Initials", initialsEl.value);
-    localStorage.getItem("Score");
-    localStorage.setItem("Score", userScore);
+    let Initials = JSON.parse(localStorage.getItem("Initials")) || [];
+    var userData = {
+        Initials: initialsEl.value.trim(),
+        Score: userScore
+    };
+    Initials.push(userData);
+    localStorage.setItem("Initials", JSON.stringify(Initials));
+    // window.location.href = "../starter/highscores.html";
 }
+
+
 
 //Event Listener for submit button
 

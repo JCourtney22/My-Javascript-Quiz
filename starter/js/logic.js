@@ -146,7 +146,7 @@ function checkAnswer(event){
     } else {
         message.textContent = "Wrong! You have lost 5 seconds.";
         messageEl.appendChild(message);
-        amendTime(-5)
+        amendTime(-5);
         console.log("wrong");
         if (qIndex >= questions.length) {
             endGame();
@@ -165,6 +165,22 @@ function amendTime(amount) {
 
 //Highscore display and storage
 
+var initialsEl = document.getElementById("initials");
+
+function highScore() {
+    localStorage.getItem("Initials");
+    localStorage.setItem("Initials", initialsEl.value);
+    localStorage.getItem("Score");
+    localStorage.setItem("Score", userScore);
+}
+
+//Event Listener for submit button
+
+var submitBtn = document.getElementById("submit");
+
+submitBtn.addEventListener("click", function () {
+    highScore();
+    })
 
 
 // startScreen.addEventListener("click", startTimer);

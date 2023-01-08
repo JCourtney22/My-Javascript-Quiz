@@ -19,7 +19,7 @@ My next struggle was understanding how to store data in the local storage and th
 
 I've learnt that breaking things down can be helpful and that seeking help is far better than struggling through. I've found that taking time on the assignment rather than pushing it through and rushing it has helped me learn more as opposed to skipping over the hard parts. I have perservered and found that far more beneficial to my learning and understanding.
 
-I have found that I have learnt a lot more about Javascript by taking my time and utilising my tutors where possible. I am proud of wat I have accomplished and hope to add to the CSS in the future to style the Quiz in a more interesting manner.
+I have found that I have learnt a lot more about Javascript by taking my time and utilising my tutors where possible. I am proud of wat I have accomplished and hope to add to the CSS in the future to style the Quiz in a more interesting manner. I have also kept the sound effects in so that I may utilise them in future to extend my understanding and use of Javascript.
 
 ##Screenshot
 

@@ -65,7 +65,7 @@ var qIndex = 0;
 
 //Start the game function
 function startGame(){
-    timerCount = 60;
+    timerCount = 100;
     document.getElementById("start-screen").style.display = "none";
     questionsEl.removeAttribute("class");
     startTimer();
